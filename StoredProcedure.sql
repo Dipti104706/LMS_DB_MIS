@@ -32,3 +32,18 @@ Begin
 End
 
 Exec spGetUserDetails 1,'Dipti';
+
+---------Stored procedure with output parameter------
+Create procedure spGetUserDetailsop
+	@name varchar(50),
+	@Usercount int output
+as
+Begin
+	select @Usercount=COUNT(id) from User_Details where first_name=@name;
+End
+
+-----@User count value catch by this variable-----
+Declare @Total int;
+exec spGetUserDetailsop 'Dipti',@Total output;
+--Display output value---
+select @Total;
