@@ -373,6 +373,29 @@ insert into Lab values('Variable','Hyderabad','HighTech',0,'2021-05-16',2);
 ------Retrieve data from the table-----
 select * from Lab;
 
+------App Parameters--------
+CREATE TABLE App_Parameters (
+  id int identity(1,1) primary key NOT NULL,
+  key_type varchar(20) NOT NULL,
+  key_value varchar(20) NOT NULL,
+  key_text varchar(80) DEFAULT NULL,
+  cur_status char(1) DEFAULT NULL,
+  lastupd_user int DEFAULT NULL,
+  lastupd_stamp datetime DEFAULT NULL,
+  creator_stamp datetime DEFAULT NULL,
+  creator_user int DEFAULT NULL,
+  seq_num int DEFAULT NULL
+) ;
+
+------Insert data--------
+insert App_Parameters values ('Engineer','fine','Execellent','Y',1,'','',1,1);
+insert App_Parameters values ('Look','fine','good','Y',1,'','',1,2);
+insert App_Parameters values ('Scale','nice','Execellent','Y',1,'','',1,3);
+insert App_Parameters values ('Frame','fine','Execellent','Y',1,'','',1,4);
+
+------Retrieve data from the table-----
+select * from App_Parameters;
+
 ---------Mentor table------
 CREATE TABLE Mentor(
   id int identity(1,1) primary key NOT NULL,
@@ -460,88 +483,11 @@ CREATE TABLE candidate_techstack_assignment(
 ------Retrieve data from the table-----
 select * from candidate_techstack_assignment;
 
---------User Engagement MIS(management info. system)-----------
-CREATE TABLE User_Engagement_MIS(
-  id int identity(1,1) primary key NOT NULL,
-  candidate_id int NOT NULL
-  FOREIGN KEY (candidate_id) REFERENCES Fellowship_Candidates(id),
-  date_of_attendancce datetime DEFAULT NULL,
-  time_of_attendance datetime DEFAULT NULL,
-  email_id varchar(50) NOT NULL
-);
-
-------Retrieve data from the table-----
-select * from User_Engagement_MIS;
-
---------------Temporary MIS data table--------------
-CREATE TABLE temporary_MIS(
-	Date_Time  DateTime NOT NULL,
-	Cpu_Count int NOT NULL,
-	Cpu_Working_Time money NOT NULL,
-	Cpu_idle_Time money NOT NULL,
-	cpu_percent money NOT NULL,
-	Usage_cpu_count bigint NOT NULL,
-	number_of_software_interrupts_since_boot money NOT NULL,
-	number_of_system_calls_since_boot bigint NOT NULL,
-	number_of_interrupts_since_boot bigint NOT NULL,
-	cpu_avg_load_over_1_min money NOT NULL,
-	cpu_avg_load_over_5_min   money NOT NULL,
-	cpu_avg_load_over_15_min money NOT NULL,
-	system_total_memory BIGINT NOT NULL,
-	system_used_memory BIGINT NOT NULL,
-	system_free_memory BIGINT NOT NULL,
-	system_active_memory BIGINT NOT NULL,
-	system_inactive_memory BIGINT NOT NULL,
-	system_buffers_memory BIGINT  NOT NULL,
-	system_cached_memory BIGINT NOT NULL,
-	system_shared_memory BIGINT NOT NULL,
-	system_avalible_memory BIGINT NOT NULL,
-	disk_total_memory BIGINT NOT NULL,
-	disk_used_memory BIGINT NOT NULL,
-	disk_free_memory BIGINT NOT NULL,
-	disk_read_count BIGINT NOT NULL,
-	disk_write_count BIGINT NOT NULL,
-	disk_read_bytes BIGINT NOT NULL,
-	disk_write_bytes BIGINT NOT NULL,
-	time_spent_reading_from_disk BIGINT NOT NULL,
-	time_spent_writing_to_disk BIGINT NOT NULL,
-	time_spent_doing_actual_Input_Output BIGINT NOT NULL,
-	number_of_bytes_sent BIGINT NOT NULL,
-	number_of_bytes_received BIGINT NOT NULL,
-	number_of_packets_sent BIGINT NOT NULL,
-	number_of_packets_recived BIGINT NOT NULL,
-	total_number_of_errors_while_receiving BIGINT NOT NULL,
-	total_number_of_errors_while_sending BIGINT NOT NULL,
-	total_number_of_incoming_packets_which_were_dropped BIGINT NOT NULL,
-	total_number_of_outgoing_packets_which_were_dropped BIGINT NOT NULL,
-	boot_time varchar(100) NOT NULL,
-	user_name varchar(50) NOT NULL,
-	keyboard int NOT NULL,
-	mouse int NOT NULL,
-	technology varchar(100) NOT NULL,
-	files_changed int NOT NULL,
-	PRIMARY KEY (user_name)
-)
-
-------Retrieve data from the table-----
-select * from temporary_MIS;
-
--------------------
-
-
-
-
-
-
-
-
-------------------------------------------dbt------------------------------
-
 ----------Lab Threshold table--------
 CREATE TABLE lab_threshold(
   id int identity(1,1) primary key NOT NULL,
   lab_id int NOT NULL
-  FOREIGN KEY(lab_id) REFERENCES candidate_lead(id), ---it may be candidate_lead-Lab 
+  FOREIGN KEY(lab_id) REFERENCES Lab(id), 
   lab_capacity varchar DEFAULT NULL,
   lead_threshold int DEFAULT NULL,
   ideation_engg_threshold int DEFAULT NULL,
@@ -559,17 +505,4 @@ CREATE TABLE lab_threshold(
 
 
 
-------App Parameters--------
-CREATE TABLE App_Parameters (
-  id int NOT NULL,
-  key_type varchar(20) NOT NULL,
-  key_value varchar(20) NOT NULL,
-  key_text varchar(80) DEFAULT NULL,
-  cur_status char(1) DEFAULT NULL,
-  lastupd_user int DEFAULT NULL,
-  lastupd_stamp datetime DEFAULT NULL,
-  creator_stamp datetime DEFAULT NULL,
-  creator_user int DEFAULT NULL,
-  seq_num int DEFAULT NULL,
-  KEY app_parameters_1 (key_type,  key_value)
-) ;
+
