@@ -430,6 +430,11 @@ CREATE TABLE Mentor(
   creator_stamp datetime DEFAULT NULL,
   creator_user int DEFAULT NULL
 ) ;
+------Insert data--------
+insert Mentor values('Harish','Lead','1',1,null,4);
+insert Mentor values('Suresh','Lead','2',1,null,2);
+insert Mentor values('Smriti','Side','3',1,null,2);
+insert Mentor values('Suraj','Side','4',1,null,4);
 
 ------Retrieve data from the table-----
 select * from Mentor;
@@ -445,7 +450,10 @@ CREATE TABLE Mentor_Ideation_Map(
 );
 
 ------Insert data--------
-
+insert Mentor_Ideation_Map values (1,1,null,2);
+insert Mentor_Ideation_Map values (2,1,null,2);
+insert Mentor_Ideation_Map values (2,1,null,2);
+insert Mentor_Ideation_Map values (4,1,null,2);
 
 ------Retrieve data from the table-----
 select * from Mentor_Ideation_Map;
@@ -461,6 +469,11 @@ CREATE TABLE Mentor_techstack(
   creator_stamp datetime DEFAULT NULL,
   creator_user int DEFAULT NULL,   
 );
+
+insert Mentor_techstack values(1,1,1,null,2);
+insert Mentor_techstack values(2,2,1,null,4);
+insert Mentor_techstack values(3,2,1,null,2);
+insert Mentor_techstack values(4,3,1,null,2);
 
 ------Retrieve data from the table-----
 select * from Mentor_techstack;
@@ -488,6 +501,11 @@ CREATE TABLE Company_Requirement(
 	creator_user int DEFAULT NULL
 );
 
+insert Company_Requirement values (1,3,'twelve','Pune',1,'doc.p',15,1,1,1,1,1,1,'good',1,null,2);
+insert Company_Requirement values (1,4,'three','Bangalore',1,'doc.p',9,1,1,1,1,1,1,'good',1,null,2);
+insert Company_Requirement values (1,5,'twelve','Mumbai',1,'doc.p',35,1,1,1,1,1,1,'good',1,null,2);
+insert Company_Requirement values (1,6,'twelve','Tata',1,'doc.p',5,1,1,1,1,1,1,'good',1,null,2);
+
 ------Retrieve data from the table-----
 select * from Company_Requirement;
 
@@ -502,6 +520,12 @@ CREATE TABLE candidate_techstack_assignment(
   status varchar(20) DEFAULT NULL,
   creator_stamp datetime DEFAULT NULL,
 );
+
+------insert data----------
+insert candidate_techstack_assignment values(1,3,null,'',null);
+insert candidate_techstack_assignment values(2,4,null,'',null);
+insert candidate_techstack_assignment values(3,5,null,'',null);
+insert candidate_techstack_assignment values(4,6,null,'',null);
 
 ------Retrieve data from the table-----
 select * from candidate_techstack_assignment;
