@@ -373,6 +373,29 @@ insert into Lab values('Variable','Hyderabad','HighTech',0,'2021-05-16',2);
 ------Retrieve data from the table-----
 select * from Lab;
 
+----------Lab Threshold table--------
+CREATE TABLE lab_threshold(
+  id int identity(1,1) primary key NOT NULL,
+  lab_id int NOT NULL
+  FOREIGN KEY(lab_id) REFERENCES Lab(id), 
+  lab_capacity varchar DEFAULT NULL,
+  lead_threshold int DEFAULT NULL,
+  ideation_engg_threshold int DEFAULT NULL,
+  buddy_engg_threshold int DEFAULT NULL,
+  status int DEFAULT 1,
+  creator_stamp datetime DEFAULT NULL,
+  creator_user int DEFAULT NULL  
+  ) ;
+
+------Insert data--------
+insert lab_threshold values (1,'',5,3,2,1,null,2);
+insert lab_threshold values (2,'H',5,3,2,1,null,2);
+insert lab_threshold values (3,'M',4,2,2,1,null,2);
+insert lab_threshold values (4,'L',3,1,1,1,null,2);
+
+------Retrieve data from the table-----
+select * from lab_threshold;
+
 ------App Parameters--------
 CREATE TABLE App_Parameters (
   id int identity(1,1) primary key NOT NULL,
@@ -483,19 +506,7 @@ CREATE TABLE candidate_techstack_assignment(
 ------Retrieve data from the table-----
 select * from candidate_techstack_assignment;
 
-----------Lab Threshold table--------
-CREATE TABLE lab_threshold(
-  id int identity(1,1) primary key NOT NULL,
-  lab_id int NOT NULL
-  FOREIGN KEY(lab_id) REFERENCES Lab(id), 
-  lab_capacity varchar DEFAULT NULL,
-  lead_threshold int DEFAULT NULL,
-  ideation_engg_threshold int DEFAULT NULL,
-  buddy_engg_threshold int DEFAULT NULL,
-  status int DEFAULT 1,
-  creator_stamp datetime DEFAULT NULL,
-  creator_user int DEFAULT NULL  
-  ) ;
+
 
 
 
