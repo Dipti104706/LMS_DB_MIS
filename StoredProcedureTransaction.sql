@@ -6,6 +6,7 @@ BEGIN
 		BEGIN TRANSACTION;
 		insert into User_Details values('santy@gmail.com','Shanti','kin','samuk@yu',9935231478,1);
 		insert into User_Details values('Ruby@gmail.com','Pihu','Rink','pihukiik@yu',7737564521,1);  
+		delete from User_Details where first_name='Priyanka';
 		insert into User_Details values('susmi@gmail.com','Susmita','nayak','saik@yu',8895231478,1); 
 		-- if insert succeeds, commit the transaction
 		COMMIT TRANSACTION;  
