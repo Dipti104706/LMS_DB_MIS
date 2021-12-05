@@ -3,9 +3,17 @@
 ------For successful commit-----
 BEGIN TRY
     BEGIN TRANSACTION;
-      insert into User_Details values('sam@gmail.com','Samiksha','jain','samuk@yu',7735231478,1);
-	  insert into User_Details values('Shalini@gmail.com','Shalini','Roy','serjuik@yu',9938564521,1);  
-    COMMIT TRANSACTION;  ------permanent save---- 
+    ----insert into User_Details values('sam@gmail.com','Samiksha','jain','samuk@yu',7735231478,1);
+	--insert into User_Details values('Shalini@gmail.com','Shalini','Roy','serjuik@yu',9938564521,1);  
+    ----------------Non corelated single/simple nested quaries-----
+	select * from Fellowship_Candidates where aggr_per=(select max(aggr_per) from Fellowship_Candidates);
+	----------------Non corelated multiple nested quaries-----
+	select * from Hired_Candidates where hired_city in (select hired_city from Hired_Candidates where first_name='Suchitra' or first_name='Dipti');
+	---------Using in operator in place or or---
+	select * from Hired_Candidates where hired_city in (select hired_city from Hired_Candidates where first_name in('Suchitra','Dipti'));
+	--------Corelated Nested query---------selecting higest aggegate percentage(for second highest n=2(means where N-1=1))
+	select * from Hired_Candidates E1 where 0=(select COUNT(aggr_per) from Hired_Candidates E2 where E2.aggr_per>E1.aggr_per);
+	COMMIT TRANSACTION;  ------permanent save---- 
 	Print 'Trasaction successfully done';
 END TRY
 BEGIN CATCH
