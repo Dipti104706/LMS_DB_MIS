@@ -24,3 +24,8 @@ on Candidates_Education_Det_Check(id Asc,field_name Asc); ----multiple columns--
 select * from Candidates_Education_Det_Check;
 
 ---------Non-clustered index----------
+create nonclustered index NCI_getcpudata
+on  dbo.[CpuLogData2019-11-17-new](user_name Asc);
+
+----to view allindexes by query use stored procedure --
+sp_helpindex [CpuLogData2019-11-17-new];
