@@ -86,6 +86,9 @@ insert into Fellowship_Candidates values('Debasmita', '', 'Sutar', 'Deba@gmail.c
 insert into Fellowship_Candidates values('Suchitra', '', 'Malick', 'Suchi@gmail.com ',
 					7756749596, 'Mumbai','2021-07-02','B.Tech',95.75, 769015,755478,'Mumbai', 'Good', 'Good' , 'Good', '1996-12-08', 1, 'Krushna', 'Business' , 7772862577, 800000, 'Rkl', 'Rkl' , 'photo_path', '2021-07-16', 'Good',
 					1, 1, 1, 'Correct', 'Good', null, 1);
+insert into Fellowship_Candidates values('Dibya', '', 'hina', 'Dib@gmail.com ',
+8856749596, 'Banaglore','2021-08-02','B.Tech',65.75, 789015,755478,'Mumbai', 'Good', 'Good' , 'Good', '1996-11-08', 1, 'Pinkal', 'Business' , 7772862577, 600000, 'Rkl', 'Rkl' , 'photo_path', '2021-07-16', 'Good',
+1, 1, 1, 'Correct', 'Good', null, 2);
 ------Retrieve data from the table-----
 select * from Fellowship_Candidates;
 
@@ -134,6 +137,7 @@ insert into Candidate_Bank_Det values(3,'Dipti',75684215698,1,'huyy444',1,'kjuy5
 insert into Candidate_Bank_Det values(4,'Sarika',33756825634,1,'juyy454',1,'kiju567kj',1,757442154253,1,'',1);
 insert into Candidate_Bank_Det values(5,'Deba',89894215698,1,'ikly464',1,'kjhg567kj',1,7586242154253,1,'',1);
 insert into Candidate_Bank_Det values(6,'Suchitra',52524215698,1,'mnoy474',1,'kmjn567kj',1,256342154253,1,'',1);
+insert into Candidate_Bank_Det values(11,'Dibya',72524215698,1,'ppnoy474',0,'2mjn567kj',1,256342154253,1,'',2);
 
 ------Retrieve data from the table-----
 select * from Candidate_Bank_Det;
@@ -252,6 +256,7 @@ insert into User_Details values('dpt@gmail.com','Dipti','Behura','gthyjuk@yu',89
 insert into User_Details values('Sar@gmail.com','Sarika','Boci','juik@yu',7789564521,1);
 insert into User_Details values('DEba@gmail.com','Deba','Sutar','oooik@yu',5689564521,1);
 insert into User_Details values('Suchi@gmail.com','Suchitra','Malick','125hu@yu',9889564521,1);
+insert into User_Details values('Dib@gmail.com','Dibya','hina','4125hu@yu',8889564521,1);
 
 ------Retrieve data from the table-----
 select * from User_Details;
@@ -505,7 +510,7 @@ insert Company_Requirement values (1,3,'twelve','Pune',1,'doc.p',15,1,1,1,1,1,1,
 insert Company_Requirement values (1,4,'three','Bangalore',1,'doc.p',9,1,1,1,1,1,1,'good',1,null,2);
 insert Company_Requirement values (1,5,'twelve','Mumbai',1,'doc.p',35,1,1,1,1,1,1,'good',1,null,2);
 insert Company_Requirement values (1,6,'twelve','Tata',1,'doc.p',5,1,1,1,1,1,1,'good',1,null,2);
-
+insert Company_Requirement values (1,11,'twelve','Tata',1,'doc.p',5,1,1,1,1,1,1,'good',1,null,2);
 ------Retrieve data from the table-----
 select * from Company_Requirement;
 
